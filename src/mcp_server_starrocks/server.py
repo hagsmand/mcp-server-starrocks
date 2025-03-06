@@ -9,7 +9,7 @@ import mcp.types as types
 from mcp.server import Server
 from pydantic import AnyUrl
 
-from mcp_server_trino import Config
+from mcp_server_starrocks import Config
 
 logger = logging.getLogger("mcp-server-starrocks")
 logger.info("Starting MCP StarRocks Server")

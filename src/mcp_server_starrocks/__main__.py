@@ -3,8 +3,8 @@ import asyncio
 import logging
 import sys
 
-from mcp_server_trino import Config
-from mcp_server_trino.server import main
+from mcp_server_starrocks import Config
+from mcp_server_starrocks.server import main
 
 logging.basicConfig(
     level=logging.INFO,
