@@ -1,0 +1,10 @@
+pyproject.toml
+src/mcp_server_trino/__init__.py
+src/mcp_server_trino/__main__.py
+src/mcp_server_trino/config.py
+src/mcp_server_trino/server.py
+src/mcp_server_trino.egg-info/PKG-INFO
+src/mcp_server_trino.egg-info/SOURCES.txt
+src/mcp_server_trino.egg-info/dependency_links.txt
+src/mcp_server_trino.egg-info/requires.txt
+src/mcp_server_trino.egg-info/top_level.txt
