@@ -3,9 +3,9 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mcp-server-trino"
+name = "mcp-server-starrocks"
 version = "0.1.0"
-description = "Model Context Protocol server for Trino"
+description = "Model Context Protocol server for Starrocks"
 readme = "README.md"
 requires-python = ">=3.12"
 license = {text = "MIT"}
@@ -25,7 +25,7 @@ dev = [
 ]
 
 [tool.setuptools]
-packages = ["mcp_server_trino"]
+packages = ["mcp_server_starrocks"]
 package-dir = {"" = "src"}
 
 [tool.black]
