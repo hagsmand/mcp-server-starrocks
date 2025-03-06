@@ -1,0 +1,74 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - host
+      - user
+      - database
+    properties:
+      host:
+        type: string
+        description: StarRocks server host
+      port:
+        type: number
+        default: 9030
+        description: StarRocks server port
+      user:
+        type: string
+        description: StarRocks user
+      database:
+        type: string
+        description: StarRocks database
+      password:
+        type: string
+        default: ""
+        description: StarRocks password (if required)
+      readonly:
+        type: boolean
+        default: false
+        description: Run in read-only mode
+      debug:
+        type: boolean
+        default: false
+        description: Enable debug logging
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => {
+      const args = [];
+      // Required arguments
+      args.push('--host', config.host);
+      args.push('--user', config.user);
+      args.push('--database', config.database);
+      
+      // Optional arguments with defaults
+      if (config.port !== undefined) {
+        args.push('--port', config.port.toString());
+      }
+      if (config.password && config.password !== "") {
+        args.push('--password', config.password);
+      }
+      if (config.readonly) {
+        args.push('--readonly');
+      }
+      if (config.debug) {
+        args.push('--debug');
+      }
+      
+      return {
+        command: 'python',
+        args: ['-m', 'mcp_server_starrocks', ...args]
+      };
+    }
+  exampleConfig:
+    host: localhost
+    port: 9030
+    user: admin
+    database: starrocks_db
+    password: secret
+    readonly: false
+    debug: true
