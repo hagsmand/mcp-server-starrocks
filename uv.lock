@@ -269,12 +269,13 @@ wheels = [
 ]
 
 [[package]]
-name = "mcp-server-trino"
+name = "mcp-server-starrocks"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "mcp" },
     { name = "pydantic" },
+    { name = "pytest" },
     { name = "starrocks" },
 ]
 
@@ -294,6 +295,7 @@ requires-dist = [
     { name = "mcp", specifier = ">=0.1.0" },
     { name = "mypy", marker = "extra == 'dev'" },
     { name = "pydantic", specifier = ">=2.0.0" },
+    { name = "pytest", specifier = ">=8.3.5" },
     { name = "pytest", marker = "extra == 'dev'" },
     { name = "pytest-asyncio", marker = "extra == 'dev'" },
     { name = "starrocks", specifier = ">=0.321.0" },

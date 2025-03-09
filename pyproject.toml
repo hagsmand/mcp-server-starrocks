@@ -13,6 +13,7 @@ dependencies = [
     "mcp>=0.1.0",
     "starrocks>=0.321.0",
     "pydantic>=2.0.0",
+    "pytest>=8.3.5",
 ]
 
 [project.optional-dependencies]
