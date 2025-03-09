@@ -21,10 +21,11 @@ The StarRocks MCP Server allows AI models to:
 - MCP Python library
 
 ### Install from source
-bash
+```bash
 git clone https://github.com/yourusername/mcp-server-starrocks.git
 cd mcp-server-starrocks
 pip install -e .
+```
 
 ### Install from Smithery
 npm install @smithery/sdk @modelcontextprotocol/sdk
@@ -36,8 +37,9 @@ npx @modelcontextprotocol/inspector uv --directory ~/mcp-server-starrocks run mc
 ## Usage
 
 ### Starting the server
-bash
+```bash
 python -m mcp_server_starrocks.server --host <starrocks-host> --port <starrocks-port> --user <username> --database <database-name> [--password <password>] [--readonly]
+```
 
 
 #### Command-line arguments:
@@ -67,38 +69,42 @@ The server provides the following tools:
 ## Examples
 
 ### Listing tables
-json
+```json
 {
-"name": "list-tables",
-"arguments": {}
+    "name": "list-tables",
+    "arguments": {}
 }
+```
 
 ### Executing a SELECT query
-json
+```json
 {
-"name": "read-query",
-"arguments": {
-"query": "SELECT FROM my_table LIMIT 10"
+    "name": "read-query",
+    "arguments": {
+        "query": "SELECT FROM my_table LIMIT 10"
+    }
 }
-}
+```
 
 ### Describing a table
-json
+```json
 {
-"name": "describe-table",
-"arguments": {
-"table_name": "my_table"
+    "name": "describe-table",
+    "arguments": {
+        "table_name": "my_table"
+    }
 }
-}
+```
 
 ### Creating a table (when not in read-only mode)
-json
+```json
 {
-"name": "create-table",
-"arguments": {
-"query": "CREATE TABLE new_table (id INT, name VARCHAR(100))"
+    "name": "create-table",
+    "arguments": {
+        "query": "CREATE TABLE new_table (id INT, name VARCHAR(100))"
+    }
 }
-}
+```
 
 ## License
 
