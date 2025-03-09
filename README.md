@@ -26,6 +26,12 @@ git clone https://github.com/yourusername/mcp-server-starrocks.git
 cd mcp-server-starrocks
 pip install -e .
 
+### Install from Smithery
+npm install @smithery/sdk @modelcontextprotocol/sdk
+
+### Using MCP Inspector
+npx @modelcontextprotocol/inspector uv --directory ~/mcp-server-starrocks run mcp-server-starrocks
+
 
 ## Usage
 
@@ -101,3 +107,4 @@ json
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
